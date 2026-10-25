@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShiaNova | Smart Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">✳</span>
+        <div>
+          <h1>Nova Calculator</h1>
+          <p>Your smart math companion</p>
+        </div>
+      </div>
+      <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">☀</button>
+    </header>
+
+    <section class="calculator panel">
+      <div class="section-title">
+        <span>CALCULATOR</span>
+        <span class="status">● Ready</span>
+      </div>
+
+      <div class="display">
+        <div id="expression" class="expression">0</div>
+        <div id="result" class="result">0</div>
+      </div>
+
+      <div class="keypad" id="keypad">
+        <button data-action="clear" class="utility">AC</button>
+        <button data-action="delete" class="utility">DEL</button>
+        <button data-value="(" class="utility">(</button>
+        <button data-value=")" class="utility">)</button>
+
+        <button data-value="7">7</button>
+        <button data-value="8">8</button>
+        <button data-value="9">9</button>
+        <button data-value="/" class="operator">÷</button>
+
+        <button data-value="4">4</button>
+        <button data-value="5">5</button>
+        <button data-value="6">6</button>
+        <button data-value="*" class="operator">×</button>
+
+        <button data-value="1">1</button>
+        <button data-value="2">2</button>
+        <button data-value="3">3</button>
+        <button data-value="-" class="operator">−</button>
+
+        <button data-value="0">0</button>
+        <button data-value=".">.</button>
+        <button data-value="%" class="operator">%</button>
+        <button data-value="+" class="operator">+</button>
+
+        <button data-action="sqrt" class="utility">√x</button>
+        <button data-action="square" class="utility">x²</button>
+        <button data-action="sign" class="utility">±</button>
+        <button data-action="equals" class="equals">=</button>
+      </div>
+
+      <div class="history-header">
+        <h2>Recent calculations</h2>
+        <button id="clearHistory" class="text-btn">Clear history</button>
+      </div>
+      <ul id="history" class="history">
+        <li class="empty">Your calculations will appear here.</li>
+      </ul>
+    </section>
+
+    <section class="assistant panel">
+      <div class="assistant-heading">
+        <span class="ai-icon">✦</span>
+        <div>
+          <h2>Smart Math Assistant</h2>
+          <p>Ask a math question in simple English.</p>
+        </div>
+      </div>
+
+      <div class="suggestions">
+        <button data-prompt="What is 15% of 2400?">15% of 2400</button>
+        <button data-prompt="What is the square root of 144?">√ 144</button>
+        <button data-prompt="What is 25 squared?">25 squared</button>
+      </div>
+
+      <form id="assistantForm" class="ask-form">
+        <input
+          id="question"
+          type="text"
+          placeholder="e.g. What is 20% of 500?"
+          autocomplete="off"
+          required
+        >
+        <button type="submit" aria-label="Ask assistant">➜</button>
+      </form>
+
+      <div id="assistantAnswer" class="answer" aria-live="polite">
+        <span class="answer-label">ASSISTANT</span>
+        <p>Hi! Try asking me a math question.</p>
+      </div>
+      <p class="disclaimer">Smart mode uses built-in math rules, not a live AI model yet.</p>
+    </section>
+
+    <footer>Built with HTML, CSS & JavaScript · Nova v1.0</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

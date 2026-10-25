@@ -1,0 +1,409 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #f4f3ff;
+  background: #0b0b15;
+  --panel: #151522;
+  --field: #0e0e19;
+  --button: #222233;
+  --text: #f4f3ff;
+  --muted: #9695ae;
+  --border: #2b2a40;
+  --purple: #a78bfa;
+  --pink: #e879f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 28px 16px;
+  background:
+    radial-gradient(ellipse at top left, #30204c 0, transparent 45%),
+    #0b0b15;
+  color: var(--text);
+  transition: background .25s, color .25s;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+}
+
+button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 3px;
+}
+
+.app {
+  width: 100%;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.brand, .assistant-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.logo, .ai-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  font-size: 25px;
+  box-shadow: 0 6px 25px #8b5cf633;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 20px;
+  letter-spacing: -.5px;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+.brand p, .assistant-heading p {
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.icon-btn {
+  width: 43px;
+  height: 43px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 25px;
+  box-shadow: 0 20px 60px #00000020;
+}
+
+.calculator {
+  max-width: 620px;
+  margin: 0 auto 24px;
+}
+
+.section-title, .history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-title {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.status {
+  color: #4ade80;
+  letter-spacing: 0;
+}
+
+.display {
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.expression {
+  width: 100%;
+  text-align: right;
+  color: var(--muted);
+  font-size: 18px;
+  overflow-wrap: anywhere;
+  min-height: 26px;
+}
+
+.result {
+  width: 100%;
+  text-align: right;
+  font-size: clamp(32px, 7vw, 48px);
+  font-weight: 700;
+  letter-spacing: -2px;
+  overflow-wrap: anywhere;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.keypad button {
+  min-height: 54px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  background: var(--button);
+  font-size: 17px;
+  font-weight: 600;
+  transition: transform .12s, background .12s;
+}
+
+.keypad button:hover {
+  background: #34334d;
+  transform: translateY(-2px);
+}
+
+.keypad button:active {
+  transform: scale(.96);
+}
+
+.keypad .utility {
+  color: var(--purple);
+  background: #a78bfa12;
+  border-color: #a78bfa20;
+}
+
+.keypad .operator {
+  background: #8b5cf620;
+  color: #c4b5fd;
+}
+
+.keypad .equals {
+  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  color: white;
+  font-size: 23px;
+}
+
+.history-header {
+  margin-top: 25px;
+  margin-bottom: 12px;
+}
+
+.history-header h2 {
+  font-size: 13px;
+}
+
+.text-btn {
+  background: none;
+  border: 0;
+  color: var(--purple);
+  font-size: 11px;
+}
+
+.history {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 7px;
+}
+
+.history li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--field);
+  border-radius: 9px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.history .empty {
+  color: var(--muted);
+}
+
+.history .history-value {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.assistant {
+  max-width: 620px;
+  margin: auto;
+}
+
+.assistant-heading {
+  align-items: flex-start;
+}
+
+.ai-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  font-size: 20px;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0 14px;
+}
+
+.suggestions button {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 9px 12px;
+  background: var(--field);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.suggestions button:hover {
+  border-color: var(--purple);
+  color: var(--text);
+}
+
+.ask-form {
+  display: flex;
+  gap: 8px;
+}
+
+.ask-form input {
+  width: 100%;
+  min-width: 0;
+  padding: 14px;
+  background: var(--field);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.ask-form button {
+  flex-shrink: 0;
+  width: 48px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  font-size: 20px;
+}
+
+.answer {
+  margin-top: 15px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #a78bfa0d;
+  border: 1px solid #a78bfa20;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.answer-label {
+  display: block;
+  color: var(--purple);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  margin-bottom: 7px;
+}
+
+.answer p {
+  font-size: 13px;
+}
+
+.disclaimer {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+footer {
+  padding: 22px 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* Light theme */
+body.light {
+  --panel: #ffffff;
+  --field: #f5f4fb;
+  --button: #efedf7;
+  --text: #242139;
+  --muted: #77738f;
+  --border: #e3e0ef;
+  background: #f5f3fc;
+  color: var(--text);
+}
+
+body.light .keypad button:hover {
+  background: #e3def5;
+}
+
+body.light .keypad .equals {
+  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  color: white;
+}
+
+@media (min-width: 900px) {
+  .app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    align-items: start;
+  }
+
+  .topbar, footer {
+    grid-column: 1 / -1;
+  }
+
+  .calculator, .assistant {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 18px 10px;
+  }
+
+  .panel {
+    padding: 17px;
+    border-radius: 18px;
+  }
+
+  .keypad {
+    gap: 7px;
+  }
+
+  .keypad button {
+    min-height: 49px;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 17px;
+  }
+}
